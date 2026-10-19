@@ -129,7 +129,8 @@
 </section>
   
     <!-- MAIN: GRID DAN CARD -->
-<main id="menu" class="container py-5">
+<section id="menu">
+    <main id="menu" class="container py-5">
     <div class="text-center mb-5">
         <h2 class="fw-bold">Pelajaran Kompetensi RPL</h2>
         <p class="text-muted">
@@ -279,6 +280,117 @@
         </div>
     </div>
 </main>
+
+    <!-- SECTION: FORM KONTAK -->
+<section id="kontak" class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="card shadow">                      
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-4">
+                        Hubungi Saya
+                    </h2>
+                    <form id="formKontak">
+                        <!-- INPUT NAMA -->
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">
+                                Nama
+                            </label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="nama"
+                                name="nama"
+                                placeholder="Masukkan nama"
+                                required>
+                        </div>
+                        <!-- INPUT EMAIL -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">
+                                Email
+                            </label>
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                name="email"
+                                placeholder="Masukkan email"
+                                required>
+                        </div>
+                        <!-- INPUT PESAN -->
+                        <div class="mb-3">
+                            <label for="pesan" class="form-label">
+                                Pesan
+                            </label>
+                            <textarea
+                                class="form-control"
+                                id="pesan"
+                                name="pesan"
+                                rows="4"
+                                placeholder="Tuliskan pesan"
+                                required></textarea>
+                        </div>
+                        <!-- TOMBOL KIRIM -->
+                        <button
+                            type="submit"
+                            class="btn btn-primary w-100">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+<!-- MODAL KONFIRMASI -->
+<div
+    class="modal fade"
+    id="modalBerhasil"
+    tabindex="-1"
+    aria-labelledby="judulModal"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="judulModal">
+                    Pesan Berhasil!
+                </h5>
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"
+                    aria-label="Tutup">
+                </button>
+            </div>
+            <div class="modal-body">
+                Terima kasih!
+                Formulir berhasil diisi dan dikirim pada halaman ini.
+            </div>
+            <div class="modal-footer">
+                <button
+                    type="button"
+                    class="btn btn-success"
+                    data-bs-dismiss="modal">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- JAVASCRIPT FORM -->
+<script>
+    const formKontak = document.getElementById("formKontak");
+    formKontak.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const modal = new bootstrap.Modal(
+            document.getElementById("modalBerhasil")
+        );
+        modal.show();
+        formKontak.reset();
+    });
+</script>
     <!-- CDN JavaScript Bootstrap -->
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
